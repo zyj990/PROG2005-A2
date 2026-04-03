@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management System (PROG2005 Part 1)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Inventory Management System</h1>
+    <!-- 消息提示区（替代alert） -->
+    <div id="message"></div>
+
+    <!-- 添加/编辑表单区 -->
+    <div class="form-section">
+      <input id="itemId" placeholder="Item ID (Unique)" required>
+      <input id="itemName" placeholder="Item Name" required>
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option>Electronics</option>
+        <option>Furniture</option>
+        <option>Clothing</option>
+        <option>Tools</option>
+        <option>Miscellaneous</option>
+      </select>
+      <input type="number" id="quantity" placeholder="Quantity" required>
+      <input type="number" id="price" placeholder="Price" required>
+      <input id="supplier" placeholder="Supplier Name" required>
+      <select id="stockStatus" required>
+        <option>In Stock</option>
+        <option>Low Stock</option>
+        <option>Out of Stock</option>
+      </select>
+      <select id="isPopular" required>
+        <option value="true">Popular: Yes</option>
+        <option value="false">Popular: No</option>
+      </select>
+      <textarea id="comment" placeholder="Comment (Optional)"></textarea>
+      <button onclick="addItem()">Add Item</button>
+      <button onclick="updateItem()">Update Item</button>
+    </div>
+
+    <!-- 操作按钮区 -->
+    <div class="controls">
+      <input id="searchName" placeholder="Search / Delete by Name">
+      <button onclick="searchItem()">Search</button>
+      <button onclick="deleteItem()">Delete</button>
+      <button onclick="displayAll()">Show All</button>
+      <button onclick="displayPopular()">Show Popular</button>
+      <button onclick="resetForm()">Reset Form</button>
+    </div>
+
+    <!-- 物品列表展示区 -->
+    <div id="itemList"></div>
+  </div>
+
+  <!-- 必须放在body末尾，确保DOM加载完成后执行JS -->
+  <script src="app.js"></script>
+</body>
+</html>
