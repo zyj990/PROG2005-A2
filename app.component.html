@@ -1,0 +1,19 @@
+<h1>Part 2 - Inventory (Angular)</h1>
+<p style="color:red">{{ message }}</p>
+
+<div>
+  ID: <input [(ngModel)]="itemId" name="itemId"><br>
+  Name: <input [(ngModel)]="itemName" name="itemName"><br>
+  Category: <input [(ngModel)]="category" name="category"><br>
+  Qty: <input type="number" [(ngModel)]="quantity" name="quantity"><br>
+  Price: <input type="number" [(ngModel)]="price" name="price"><br>
+  Supplier: <input [(ngModel)]="supplierName" name="supplierName"><br>
+
+  <button (click)="addItem()">Add</button>
+  <button (click)="reset()">Reset</button>
+</div>
+
+<h3>List</h3>
+<div *ngFor="let item of inventory">
+  {{ item.itemName }} ({{ item.category }}) | Qty: {{ item.quantity }}
+</div>
